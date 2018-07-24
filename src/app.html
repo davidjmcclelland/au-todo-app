@@ -1,0 +1,16 @@
+<!--In order to render, we need to create a view for the app component. This introduces the next convention of Aurelia. To create a view for any class, simply create an HTML file with the same name as the ES Next module but change the file extension to .html. Inside that view, you can place an HTML 5 template with data binding expressions declaring how the view should render an instance of the class. Let's start with a very basic view of our app.-->
+
+<template>
+    <h1>${heading}</h1>
+</template>
+
+<!--
+There are a couple of things to notice here. First, all views are wrapped in a Web Components template element.
+
+Second, did you notice the ${heading} syntax? Well, inside of a view, you have access to all the properties and methods of the class instance associated with that View and you can access them inside the content of any element or attribute by using the ES Next template string syntax as shown above.
+
+The above syntax creates a one-way data-binding to the heading property. By "one-way" we mean that the dataflow is unidirectional and only changes to the heading property will affect the view. There is no "reverse" flow from the view back to the view-model.
+
+We call a View's associated class its View-Model because it's a model for, or a model of the View. Most Aurelia development leverages the Model - View - View-Model pattern. However, Aurelia is flexible enough to enable also using patterns like Supervising Controller, Passive View and Model - View - Controller if desired.
+
+-->

@@ -4,11 +4,19 @@
     <title>Aurelia</title>
   </head>
   <body aurelia-app="src/main">
+  <!--
+  This tag is used to load SystemJS, a modern JavaScript module loader. Because Aurelia is a modern framework, it's written as modules and encourages you to create your code in a modular fashion. To use modules in ES Next you need a loader that understands modular code. That's what SystemJS does. It locates modules, understands their dependencies and ensures that everything is properly loaded at runtime. Aurelia supports a variety of module loaders. Besides SystemJS, Aurelia supports all AMD-based loaders such as RequireJS, Cajon and Dojo. Aurelia also supports module-based build systems like Webpack.  -->
     <script src="scripts/system.js"></script>
-    <script src="scripts/config-typescript.js"></script>
+  <!-- This next line of code configures the programming language you want to use. It's actually a configuration file for the SystemJS module loader that installs a transpiler into the loader. As a result, each time a module is loaded, it's able to take your ESNext or TypeScript code and automatically convert it to ES5 code that today's browsers fully understand. Pretty cool right?  -->
+    <script src="scripts/config-esnext.js"></script>
+  <!-- This is the core of Aurelia itself, in a single script file. You need to add that to use the framework. That's what's going to enable all the cool capabilities we'll use in this guide. -->
     <script src="scripts/aurelia-core.min.js"></script>
+  <!--The last script tag is a bit different. Instead of setting a src, it provides some code. The SystemJS object is being provided by the SystemJS module loader we mentioned above. Here, we're calling one of its APIs, import. This API tells the loader to load or "import" a module with the specified name. In this case, we're loading aurelia-bootstrapper which resides in the aurelia-core.min.js file linked above. This module contains Aurelia's "bootstrap" or "startup" code. This tells Aurelia to load the framework, configure it and run your application.-->
     <script>
       System.import('aurelia-bootstrapper');
     </script>
+
+<!--  There's one more thing to note. I wonder if you noticed it. On the body tag, there's an aurelia-app attribute. It's pointing to src/main. This is what tells Aurelia's bootstrapper what module contains the framework configuration as well as what HTML element is the "host" element where the application will be rendered. We'll look at creating that file a little bit later. Before we do that, we want to do something a bit non-traditional. We want to show you how you can build your entire To-do application in plain, vanilla ES Next without using any Aurelia APIs. Then, we'll use Aurelia to render our application to the screen, without changing any of our ES Next code.-->
+
   </body>
 </html>

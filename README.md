@@ -1,12 +1,9 @@
 # au-todo-app
 tracks https://aurelia.io/docs/tutorials/creating-a-todo-app/
 
-Lesson 2:
+Lesson 3:
 
-1. We can see todos added to the DOM as we enter them
-1. We can remove todos when we click each
-todo-item's remove button
-1. We can see how the description text scope changes as it passes from App, where it is gathered from the textbox, to Todo, where it is displayed in the DOM.
+1. We can see the style of a Todo item update when the checkmark is checked. We use a binding to the style for the item for this to happen.
 
 NodeJS with npm - To start up a simple web server in the project folder, 
 * first globally install the http-server command with 

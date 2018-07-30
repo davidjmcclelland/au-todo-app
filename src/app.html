@@ -38,7 +38,10 @@
             the to-do part could be called anything, iots a local reference
             in fact I renamed it toDont for laughs here. -->
             <input type="checkbox" checked.bind="toDont.done">
-            <span>${toDont.description}</span>
+            <span css="text-decoration: ${toDont.done ? 'line-through' : 'none'}">${toDont.description}</span>
+            <!--  Use the style attribute's alias, css when doing string interpolation to
+             ensure your application is compatible with Internet Explorer and Edge,
+             if you care about supporting these browsers. -->
             <!-- note description is a property of the to-do class not todoDescrition
             of the app class. -->
             <button click.trigger="removeTodo(toDont)">Remove</button>
